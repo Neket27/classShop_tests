@@ -1,5 +1,7 @@
 package Shop;
 
+import java.util.Date;
+
 public interface EventProduct {
 
 
@@ -11,4 +13,5 @@ public interface EventProduct {
     public void setModel(String model);
     public void checkInStock();
 
+    public Product create(String category, String title, double price, int year, int warranty, Date currentDate, int count_in_stock);
 }

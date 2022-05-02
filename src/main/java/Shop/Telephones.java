@@ -11,6 +11,11 @@ public class Telephones extends Product implements EventProduct {
         }
     }
 
+    @Override
+    public Product create(String category, String title, double price, int year, int warranty, Date currentDate, int count_in_stock) {
+        return null;
+    }
+
     public Telephones() {}
     public Telephones(String category, String title, double price, int year, Date currentYear, String country, String type, String model, String cpu, String gpu, int warranty ,boolean wi_fi, String display,int count_in_stock) {
         super(category, title, price, year, warranty, currentYear,count_in_stock);

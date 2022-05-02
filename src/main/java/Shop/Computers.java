@@ -17,6 +17,11 @@ public class Computers extends Product implements EventProduct, EventComputer{
         }
     }
 
+    @Override
+    public Product create(String category, String title, double price, int year, int warranty, Date currentDate, int count_in_stock) {
+        return null;
+    }
+
     public Computers(){}
     public Computers(String category,String title,double price,int year ,Date currentDate,String country, String type, String model, String cpu, String gpu, int warranty, boolean wi_fi,int count_in_stock) {
         super(category,title,price,year,warranty,currentDate,count_in_stock);
