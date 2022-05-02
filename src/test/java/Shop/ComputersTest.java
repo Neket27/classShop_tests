@@ -9,6 +9,7 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
 
 class ComputersTest {
 
@@ -68,39 +69,45 @@ class ComputersTest {
     @Test
     public void Computers_Mock() {
 
-
-        Computers actualComputers = new Computers("Компьютеры",
-                "hp",
-                15000,
-                2022,
-                date,
-                "Russia",
-                "Компьютер моноблок",
-                "honor magexbook 15",
-                "i7",
-                "amd99",
-                2,
-                true,
-                6);
+        Product product= mock(Product.class);
+        Computers computers = new Computers(product);
+        computers.setCountry("USA");
+        computers.setType("Комп");
+        computers.setModel("Простая модель");
+        computers.setCpu("без него");
+        computers.setGpu("ну неееет");
+        Computers.create()
 
 
-        Computers expectedComputers = new Computers("Компьютеры",
-                "hp",
-                15000,
-                2022,
-                date,
-                "Russia",
-                "Компьютер моноблок",
-                "honor magexbook 15",
-                "i7",
-                "amd99",
-                2,
-                true,
-                3);
+//        Computers actualComputers = new Computers("Компьютеры",
+//                "hp",
+//                15000,
+//                2022,
+//                date,
+//                "Russia",
+//                "Компьютер моноблок",
+//                "honor magexbook 15",
+//                "i7",
+//                "amd99",
+//                2,
+//                true,
+//                6);
+//
+//
+//        Computers expectedComputers = new Computers("Компьютеры",
+//                "hp",
+//                15000,
+//                2022,
+//                date,
+//                "Russia",
+//                "Компьютер моноблок",
+//                "honor magexbook 15",
+//                "i7",
+//                "amd99",
+//                2,
+//                true,
+//                3);
 
-       // given(actualComputers).willReturn(expectedComputers);
-
-        Product dataServiceMock = Mockito.mock(Product.class);
 
 
     }
