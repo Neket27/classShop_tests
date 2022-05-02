@@ -10,6 +10,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class ComputersTest {
 
@@ -69,15 +70,10 @@ class ComputersTest {
     @Test
     public void Computers_Mock() {
 
-//
-//        computers.setCountry("USA");
-//        computers.setType("Комп");
-//        computers.setModel("Простая модель");
-//        computers.setCpu("без него");
-//        computers.setGpu("ну неееет");
+
         Product product= mock(Product.class);
         EventComputer eventComputer=mock(EventComputer.class);
-        Computers computers = new Computers(product);
+
 //        computers.setCountry("USA");
 //        computers.setType("Комп");
 //        computers.setModel("Простая модель");
@@ -98,6 +94,8 @@ class ComputersTest {
 
         ArgumentCaptor<CreateComputerArgument> captor = ArgumentCaptor.forClass(CreateComputerArgument.class);
         verify(eventComputer).create(captor.capture());
+        assertEquals(captor.getValue(),arg);
+
 
 
 
