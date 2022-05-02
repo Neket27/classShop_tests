@@ -69,14 +69,36 @@ class ComputersTest {
     @Test
     public void Computers_Mock() {
 
+//
+//        computers.setCountry("USA");
+//        computers.setType("Комп");
+//        computers.setModel("Простая модель");
+//        computers.setCpu("без него");
+//        computers.setGpu("ну неееет");
         Product product= mock(Product.class);
+        EventComputer eventComputer=mock(EventComputer.class);
         Computers computers = new Computers(product);
-        computers.setCountry("USA");
-        computers.setType("Комп");
-        computers.setModel("Простая модель");
-        computers.setCpu("без него");
-        computers.setGpu("ну неееет");
-        Computers.create()
+//        computers.setCountry("USA");
+//        computers.setType("Комп");
+//        computers.setModel("Простая модель");
+//        computers.setCpu("без него");
+//        computers.setGpu("ну неееет");
+
+        CreateComputerArgument arg = CreateComputerArgument.builder()
+
+                .country("USA`")
+                .type("Комп")
+                .model("Простая модель")
+                .cpu("без него")
+                .gpu("ну неееет")
+                .wi_fi(true)
+                .build();
+
+        eventComputer.create(arg);
+
+        ArgumentCaptor<CreateComputerArgument> captor = ArgumentCaptor.forClass(CreateComputerArgument.class);
+        verify(eventComputer).create(captor.capture());
+
 
 
 //        Computers actualComputers = new Computers("Компьютеры",
