@@ -2,6 +2,7 @@ package Shop;
 
 public interface EventProduct {
 
+
     public String getCountry();
     public void  setCountry(String country);
     public String getType();

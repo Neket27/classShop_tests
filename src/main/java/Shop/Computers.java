@@ -2,9 +2,13 @@ package Shop;
 
 import java.util.Date;
 
-public class Computers extends Product implements EventProduct {
+public class Computers extends Product implements EventProduct, EventComputer{
     String country, type, model, cpu, gpu;
     boolean wi_fi;
+
+    public Computers(Product product) {
+        super(product);
+    }
 
 
     public void checkInStock(){
@@ -38,6 +42,12 @@ public class Computers extends Product implements EventProduct {
             setPrice(price*9.1);
 
 
+    }
+
+    @Override
+    public Computers create(CreateComputerArgument createComputerArgument) {
+
+        return null;
     }
 
     @Override

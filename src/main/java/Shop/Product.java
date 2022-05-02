@@ -27,6 +27,17 @@ public class Product {
 
         //checkCorrectnessDates();
     }
+
+    public Product(Product product) {
+        this.category = product.getCategory();
+        this.title = product.getTitle();
+        this.price = product.getPrice();
+        this.year =  product.getYear();
+        this.warranty= product.getWarranty();
+        this.currentDate=product.getCurrentDate();
+        this.count_in_stock=product.getCount_in_stock();
+    }
+
     //get and set
     public String getCategory() {return category;}
     public String getTitle() {return title;}

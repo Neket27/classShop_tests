@@ -2,6 +2,7 @@ package Shop;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
@@ -9,6 +10,8 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class ComputersTest {
 
@@ -68,8 +71,32 @@ class ComputersTest {
     @Test
     public void Computers_Mock() {
 
+        Product product= mock(Product.class);
+        EventComputer eventComputer=mock(EventComputer.class);
+        Computers computers = new Computers(product);
+//        computers.setCountry("USA");
+//        computers.setType("Комп");
+//        computers.setModel("Простая модель");
+//        computers.setCpu("без него");
+//        computers.setGpu("ну неееет");
 
-        Computers actualComputers = new Computers("Компьютеры",
+        CreateComputerArgument arg = CreateComputerArgument.builder()
+
+                .country("USA`")
+                .type("Комп")
+                .model("Простая модель")
+                .cpu("без него")
+                .gpu("ну неееет")
+                .wi_fi(true)
+                .build();
+
+        eventComputer.create(arg);
+
+        ArgumentCaptor<CreateComputerArgument> captor = ArgumentCaptor.forClass(CreateComputerArgument.class);
+        verify(eventComputer).create(captor.capture());
+
+
+                Computers actualComputers = new Computers("Компьютеры",
                 "hp",
                 15000,
                 2022,
@@ -107,6 +134,10 @@ class ComputersTest {
 
     @Test
     public void CheckInStockTest(){
+
+
+
+
         Computers actualComputers = new Computers("Компьютеры",
                 "hp",
                 15000,
