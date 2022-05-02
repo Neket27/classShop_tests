@@ -26,6 +26,13 @@ class ProductTest {
         Product product =new Product("продукт","заголовок",500,5,1,date,4);
 
         when(eventProduct.create("продукт","заголовок",500,5,1,date,4)).thenReturn(product);
-        verify(eventProduct).create("продукт","заголовок",500,5,1,date,4);
+        eventProduct.create("продукт","заголовок",500,5,1,date,4);
+        verify(eventProduct).create(eq("продукт"),
+                                eq("заголовок"),
+                                eq(500),
+                                eq(5),
+                                eq(1),
+                                eq(date),
+                                eq(4));
     }
 }
