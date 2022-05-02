@@ -26,6 +26,6 @@ class ProductTest {
         Product product =new Product("продукт","заголовок",500,5,1,date,4);
 
         when(eventProduct.create("продукт","заголовок",500,5,1,date,4)).thenReturn(product);
-
+        verify(eventProduct).create("продукт","заголовок",500,5,1,date,4);
     }
 }
