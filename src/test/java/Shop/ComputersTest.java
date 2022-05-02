@@ -80,6 +80,17 @@ class ComputersTest {
 //        computers.setCpu("без него");
 //        computers.setGpu("ну неееет");
 
+
+        Product product= mock(Product.class);
+        EventComputer eventComputer=mock(EventComputer.class);
+
+//        computers.setCountry("USA");
+//        computers.setType("Комп");
+//        computers.setModel("Простая модель");
+//        computers.setCpu("без него");
+//        computers.setGpu("ну неееет");
+
+
         CreateComputerArgument arg = CreateComputerArgument.builder()
 
                 .country("USA`")
@@ -96,6 +107,7 @@ class ComputersTest {
         verify(eventComputer).create(captor.capture());
 
 
+
                 Computers actualComputers = new Computers("Компьютеры",
                 "hp",
                 15000,
@@ -110,24 +122,41 @@ class ComputersTest {
                 true,
                 6);
 
+        assertEquals(captor.getValue(),arg);
 
-        Computers expectedComputers = new Computers("Компьютеры",
-                "hp",
-                15000,
-                2022,
-                date,
-                "Russia",
-                "Компьютер моноблок",
-                "honor magexbook 15",
-                "i7",
-                "amd99",
-                2,
-                true,
-                3);
 
-       // given(actualComputers).willReturn(expectedComputers);
 
-        Product dataServiceMock = Mockito.mock(Product.class);
+
+
+//        Computers actualComputers = new Computers("Компьютеры",
+//                "hp",
+//                15000,
+//                2022,
+//                date,
+//                "Russia",
+//                "Компьютер моноблок",
+//                "honor magexbook 15",
+//                "i7",
+//                "amd99",
+//                2,
+//                true,
+//                6);
+//
+//
+//        Computers expectedComputers = new Computers("Компьютеры",
+//                "hp",
+//                15000,
+//                2022,
+//                date,
+//                "Russia",
+//                "Компьютер моноблок",
+//                "honor magexbook 15",
+//                "i7",
+//                "amd99",
+//                2,
+//                true,
+//                3);
+
 
 
     }
