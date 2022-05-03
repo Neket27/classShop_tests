@@ -71,17 +71,8 @@ class ComputersTest {
     @Test
     public void Computers_Mock() {
 
-        Product product= mock(Product.class);
-        EventComputer eventComputer=mock(EventComputer.class);
-        Computers computers = new Computers(product);
-//        computers.setCountry("USA");
-//        computers.setType("Комп");
-//        computers.setModel("Простая модель");
-//        computers.setCpu("без него");
-//        computers.setGpu("ну неееет");
 
 
-        Product product= mock(Product.class);
         EventComputer eventComputer=mock(EventComputer.class);
 
 //        computers.setCountry("USA");
@@ -108,57 +99,7 @@ class ComputersTest {
 
 
 
-                Computers actualComputers = new Computers("Компьютеры",
-                "hp",
-                15000,
-                2022,
-                date,
-                "Russia",
-                "Компьютер моноблок",
-                "honor magexbook 15",
-                "i7",
-                "amd99",
-                2,
-                true,
-                6);
-
         assertEquals(captor.getValue(),arg);
-
-
-
-
-
-//        Computers actualComputers = new Computers("Компьютеры",
-//                "hp",
-//                15000,
-//                2022,
-//                date,
-//                "Russia",
-//                "Компьютер моноблок",
-//                "honor magexbook 15",
-//                "i7",
-//                "amd99",
-//                2,
-//                true,
-//                6);
-//
-//
-//        Computers expectedComputers = new Computers("Компьютеры",
-//                "hp",
-//                15000,
-//                2022,
-//                date,
-//                "Russia",
-//                "Компьютер моноблок",
-//                "honor magexbook 15",
-//                "i7",
-//                "amd99",
-//                2,
-//                true,
-//                3);
-
-
-
     }
 
     @Test
@@ -167,19 +108,7 @@ class ComputersTest {
 
 
 
-        Computers actualComputers = new Computers("Компьютеры",
-                "hp",
-                15000,
-                2022,
-                date,
-                "Russia",
-                "Компьютер моноблок",
-                "honor magexbook 15",
-                "i7",
-                "amd99",
-                2,
-                true,
-                4);
+
 
     }
 

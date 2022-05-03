@@ -1,7 +1,10 @@
 package Shop;
+import lombok.Builder;
+
 import java.util.Date;
 import java.util.*;
 
+//@Builder
 public class Product {
    private String category, title;
    private int year,warranty,count_in_stock;
